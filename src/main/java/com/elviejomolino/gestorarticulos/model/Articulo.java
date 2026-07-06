@@ -1,9 +1,35 @@
 package com.elviejomolino.gestorarticulos.model;
 
+// IMPORTO ENTITY;
+import jakarta.persistence.Entity;
+
+// IMPORTO GENERATEDVALUE;
+import jakarta.persistence.GeneratedValue;
+
+// IMPORTO GENERATIONTYPE;
+import jakarta.persistence.GenerationType;
+
+// IMPORTO ID;
+import jakarta.persistence.Id;
+
+// IMPORTO TABLE;
+import jakarta.persistence.Table;
+
+// ESTA CLASE SE MAPEARA EN UNA TABLA EN LA BD;
+@Entity
+
+// NOMBRE DE LA TABLA;
+@Table(name = "articulos")
+
 public class Articulo { // INICIO CLASE ARTICULO;
 
     // ESTADO: ATRIBUTOS;
+
+    // CLAVE PRIMARIA AUTOINCREMENTAL;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nombre;
     private double precio;
     private String descripcion;
