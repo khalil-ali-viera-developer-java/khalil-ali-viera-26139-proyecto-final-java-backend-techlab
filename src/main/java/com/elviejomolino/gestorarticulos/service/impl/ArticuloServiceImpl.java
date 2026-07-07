@@ -30,6 +30,7 @@ public class ArticuloServiceImpl implements ArticuloService { // INICIO CLASE AR
     private final ArticuloRepository articuloRepository;
 
     // COMPORTAMIENTO: CONSTRUCTORES - MÉTODOS;
+    // CONSTRUCTOR PARAMETRIZADO;
     @Autowired
     public ArticuloServiceImpl(ArticuloRepository articuloRepository) {
         this.articuloRepository = articuloRepository;
