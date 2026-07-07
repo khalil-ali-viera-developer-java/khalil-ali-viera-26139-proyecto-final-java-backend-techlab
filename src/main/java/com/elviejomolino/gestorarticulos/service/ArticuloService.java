@@ -6,13 +6,17 @@ import java.util.List;
 // IMPORTO ARTICULO;
 import com.elviejomolino.gestorarticulos.model.Articulo;
 
+// IMPORTO ARTICULONOTFOUNDEXCEPTION;
+import com.elviejomolino.gestorarticulos.exception.ArticuloNotFoundException;
+
+// LA INTERFACE SERA IMPLEMENTADA POR ARTICULOSERVICEIMPL;
 public interface ArticuloService { // INICIO INTERFACE ARTICULOSERVICE;
 
     // FINDALL();
     List<Articulo> findAllService();
 
     // FINDBYID(ID);
-    Articulo findByIdService(Long id);
+    Articulo findByIdService(Long id) throws ArticuloNotFoundException;
 
     // SAVE(ENTITY);
     Articulo saveService(Articulo articulo);
@@ -21,6 +25,6 @@ public interface ArticuloService { // INICIO INTERFACE ARTICULOSERVICE;
     Articulo modifyByIdService(Long id, Articulo articulo);
 
     // DELETEBYID(ID);
-    boolean deleteById(Long id);
+    void deleteById(Long id);
 
 } // FINAL INTERFACE ARTICULOSERVICE;
