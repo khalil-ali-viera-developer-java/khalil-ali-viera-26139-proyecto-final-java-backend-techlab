@@ -1,6 +1,11 @@
 package com.elviejomolino.gestorarticulos.controller;
 
+// IMPORTO AUTOWIRED;
 import org.springframework.beans.factory.annotation.Autowired;
+
+// IMPORTO RESPONSEENTITY;
+import org.springframework.http.ResponseEntity;
+
 // IMPORTO CROSSORIGIN;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
@@ -33,5 +38,23 @@ public class ArticuloController { // INICIO CLASE ARTICULOCONTROLLER;
     public ArticuloController(ArticuloService articuloService) {
         this.articuloService = articuloService;
     }
+
+    // FINDALL();
+    public ResponseEntity<List<Articulo>> findAllController() {
+
+        List<Articulo> articulos = this.articuloService.findAllService();
+
+        // RETURN JSON - RETURN HTTP: 200;
+        return ResponseEntity.ok(articulos);
+
+    }
+
+    // FINDBYID(ID);
+
+    // SAVE(ENTITY);
+
+    // MODIFYBYID(ID, ENTITY);
+
+    // DELETEBYID(ID);
 
 } // FINAL CLASE ARTICULOCONTROLLER;
