@@ -1,9 +1,26 @@
 package com.elviejomolino.gestorarticulos.service;
 
-public class ArticuloService { // INICIO CLASE ARTICULOSERVICE;
+// IMPORTO LIST;
+import java.util.List;
 
-    // ESTADO: ATRIBUTOS;
+// IMPORTO ARTICULO;
+import com.elviejomolino.gestorarticulos.model.Articulo;
 
-    // COMPORTAMIENTO: CONSTRUCTORES - MÉTODOS;
+public interface ArticuloService { // INICIO INTERFACE ARTICULOSERVICE;
 
-} // FINAL CLASE ARTICULOSERVICE;
+    // FINDALL();
+    List<Articulo> findAllService();
+
+    // FINDBYID(ID);
+    Articulo findByIdService(Long id);
+
+    // SAVE(ENTITY);
+    Articulo saveService(Articulo articulo);
+
+    // MODIFYBYID(ID, ENTITY);
+    Articulo modifyByIdService(Long id, Articulo articulo);
+
+    // DELETEBYID(ID);
+    boolean deleteById(Long id);
+
+} // FINAL INTERFACE ARTICULOSERVICE;
