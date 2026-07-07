@@ -19,12 +19,12 @@ public interface ArticuloService { // INICIO INTERFACE ARTICULOSERVICE;
     Articulo findByIdService(Long id) throws ArticuloNotFoundException;
 
     // SAVE(ENTITY);
-    Articulo saveService(Articulo articulo);
+    // Articulo saveService(Articulo articulo);
 
     // MODIFYBYID(ID, ENTITY);
-    Articulo modifyByIdService(Long id, Articulo articulo);
+    // Articulo modifyByIdService(Long id, Articulo articulo);
 
     // DELETEBYID(ID);
-    void deleteById(Long id);
+    // void deleteById(Long id);
 
 } // FINAL INTERFACE ARTICULOSERVICE;

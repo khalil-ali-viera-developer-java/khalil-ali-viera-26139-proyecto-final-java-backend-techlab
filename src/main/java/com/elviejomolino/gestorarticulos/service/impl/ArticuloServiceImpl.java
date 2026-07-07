@@ -51,7 +51,7 @@ public class ArticuloServiceImpl implements ArticuloService { // INICIO CLASE AR
             throw new IllegalArgumentException("El id del articulo no puede ser nulo.");
         }
 
-        if (id <= 0L) {
+        if (id <= 0) {
             throw new IllegalArgumentException("El id del articulo no puede ser 0 o negativo.");
         }
 
@@ -59,7 +59,7 @@ public class ArticuloServiceImpl implements ArticuloService { // INICIO CLASE AR
         Optional<Articulo> articuloOptional = this.articuloRepository.findById(id);
 
         if (articuloOptional.isEmpty()) {
-            throw new ArticuloNotFoundException("El articulo con el id " + id + " no encontrado.");
+            throw new ArticuloNotFoundException("El articulo con el id " + id + " no fue encontrado.");
         }
 
         return articuloOptional.get();

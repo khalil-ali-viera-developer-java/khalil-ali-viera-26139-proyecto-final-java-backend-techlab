@@ -2,12 +2,18 @@ package com.elviejomolino.gestorarticulos.controller;
 
 // IMPORTO AUTOWIRED;
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.http.HttpStatus;
 // IMPORTO RESPONSEENTITY;
 import org.springframework.http.ResponseEntity;
 
 // IMPORTO CROSSORIGIN;
 import org.springframework.web.bind.annotation.CrossOrigin;
+
+// IMPORTO GETMAPPING;
+import org.springframework.web.bind.annotation.GetMapping;
+
+// IMPORTO PATHVARIABLE;
+import org.springframework.web.bind.annotation.PathVariable;
 
 // IMPORTO REQUESTMAPPING;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +23,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 // IMPORTO LIST;
 import java.util.List;
+
+// IMPORTO ARTICULONOTFOUNDEXCEPTION;
+import com.elviejomolino.gestorarticulos.exception.ArticuloNotFoundException;
 
 // IMPORTO ARTICULO;
 import com.elviejomolino.gestorarticulos.model.Articulo;
@@ -40,6 +49,7 @@ public class ArticuloController { // INICIO CLASE ARTICULOCONTROLLER;
     }
 
     // FINDALL();
+    @GetMapping
     public ResponseEntity<List<Articulo>> findAllController() {
 
         List<Articulo> articulos = this.articuloService.findAllService();
@@ -50,6 +60,29 @@ public class ArticuloController { // INICIO CLASE ARTICULOCONTROLLER;
     }
 
     // FINDBYID(ID);
+    @GetMapping("/{id}")
+    public ResponseEntity<?> findByIdController(@PathVariable Long id) {
+
+        try {
+
+            // ENTITY;
+            Articulo articulo = this.articuloService.findByIdService(id);
+
+            // RETURN JSON - RETURN HTTP: 200;
+            return ResponseEntity.ok(articulo);
+
+        } catch (IllegalArgumentException e) {
+
+            // ERROR DEL CLIENTE: HTTP 400;
+            return ResponseEntity.badRequest().body(e.getMessage());
+
+        } catch (ArticuloNotFoundException e) {
+
+            // RECURSO NO ENCONTRADO: HTTP 404;
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+
+        }
+    }
 
     // SAVE(ENTITY);
 
