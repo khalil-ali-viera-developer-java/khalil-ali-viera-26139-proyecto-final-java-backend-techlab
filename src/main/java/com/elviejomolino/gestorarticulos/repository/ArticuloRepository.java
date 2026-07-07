@@ -1,6 +1,6 @@
 package com.elviejomolino.gestorarticulos.repository;
 
-public class ArticuloRepository { // INICIO CLASE ARTICULOREPOSITORY;
+public interface ArticuloRepository { // INICIO CLASE ARTICULOREPOSITORY;
 
     // ESTADO: ATRIBUTOS;
 
