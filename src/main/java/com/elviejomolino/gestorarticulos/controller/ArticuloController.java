@@ -21,6 +21,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 // IMPORTO POSTMAPPING;
 import org.springframework.web.bind.annotation.PostMapping;
 
+// IMPORTO PUTMAPPING;
+import org.springframework.web.bind.annotation.PutMapping;
+
 // IMPORTO REQUESTBODY;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -115,6 +118,29 @@ public class ArticuloController { // INICIO CLASE ARTICULOCONTROLLER;
     }
 
     // MODIFYBYID(ID, ENTITY);
+    @PutMapping("/{id}")
+    public ResponseEntity<?> modifyByIdController(@PathVariable Long id, @RequestBody Articulo articulo) {
+
+        try {
+
+            // ENTITY;
+            Articulo articuloModificado = this.articuloService.modifyByIdService(id, articulo);
+
+            // RETURN JSON - RETURN HTTP: 200;
+            return ResponseEntity.ok(articuloModificado);
+
+        } catch (IllegalArgumentException e) {
+
+            // ERROR DEL CLIENTE: HTTP 400;
+            return ResponseEntity.badRequest().body(e.getMessage());
+
+        } catch (ArticuloNotFoundException e) {
+
+            // RECURSO NO ENCONTRADO: 404;
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+
+        }
+    }
 
     // DELETEBYID(ID);
 
