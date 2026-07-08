@@ -67,6 +67,41 @@ public class ArticuloServiceImpl implements ArticuloService { // INICIO CLASE AR
     }
 
     // SAVE(ENTITY);
+    @Override
+    public Articulo saveService(Articulo articulo) {
+
+        // VALIDAR ARTICULO;
+        if (articulo == null) {
+            throw new IllegalArgumentException("El articulo no puede ser nulo.");
+        }
+
+        // VALIDAR NOMBRE;
+        if (articulo.getNombre() == null) {
+            throw new IllegalArgumentException("El nombre del articulo no puede ser nulo.");
+        }
+
+        if (articulo.getNombre().isBlank()) {
+            throw new IllegalArgumentException(
+                    "El nombre del articulo no puede estar vacio, tener espacios en blanco o caracteres de espacios en blanco.");
+        }
+
+        // VALIDAR PRECIO;
+        if (articulo.getPrecio() <= 0) {
+            throw new IllegalArgumentException("El precio del articulo no puede ser 0 o negativo.");
+        }
+
+        // VALIDAR DESCRIPCION;
+        if (articulo.getDescripcion() == null) {
+            throw new IllegalArgumentException("La descripción del articulo no puede ser nula.");
+        }
+
+        if (articulo.getDescripcion().isBlank()) {
+            throw new IllegalArgumentException(
+                    "La descripción del articulo no puede estar vacia, tener espacios en blanco o caracteres de espacios en blanco.");
+        }
+
+        return this.articuloRepository.save(articulo);
+    }
 
     // MODIFYBYID(ID, ENTITY);
 
