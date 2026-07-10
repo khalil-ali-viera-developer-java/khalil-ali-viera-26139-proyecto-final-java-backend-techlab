@@ -12,6 +12,9 @@ import org.springframework.http.ResponseEntity;
 // IMPORTO CROSSORIGIN;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
+// IMPORTO DELETEMAPPING;
+import org.springframework.web.bind.annotation.DeleteMapping;
+
 // IMPORTO GETMAPPING;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -136,12 +139,34 @@ public class ArticuloController { // INICIO CLASE ARTICULOCONTROLLER;
 
         } catch (ArticuloNotFoundException e) {
 
-            // RECURSO NO ENCONTRADO: 404;
+            // RECURSO NO ENCONTRADO: HTTP 404;
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
 
         }
     }
 
     // DELETEBYID(ID);
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteByController(@PathVariable Long id) {
+
+        try {
+
+            this.articuloService.deleteById(id);
+
+            // RETURN HTTP 204;
+            return ResponseEntity.noContent().build();
+
+        } catch (IllegalArgumentException e) {
+
+            // ERROR DEL CLIENTE: HTTP 400;
+            return ResponseEntity.badRequest().body(e.getMessage());
+
+        } catch (ArticuloNotFoundException e) {
+
+            // REGISTRO NO ENCONTRADO: HTTP 404;
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+
+        }
+    }
 
 } // FINAL CLASE ARTICULOCONTROLLER;

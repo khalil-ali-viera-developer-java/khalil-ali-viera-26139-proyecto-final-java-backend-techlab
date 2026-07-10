@@ -164,5 +164,23 @@ public class ArticuloServiceImpl implements ArticuloService { // INICIO CLASE AR
     }
 
     // DELETEBYID(ID);
+    @Override
+    public void deleteById(Long id) throws ArticuloNotFoundException {
+
+        // VALIDAR ID;
+        if (id == null) {
+            throw new IllegalArgumentException("El id del articulo no puede ser nulo.");
+        }
+
+        if (id <= 0) {
+            throw new IllegalArgumentException("El id del articulo no pude ser 0 o negativo.");
+        }
+
+        if (!(this.articuloRepository.existsById(id))) {
+            throw new ArticuloNotFoundException("El articulo con el id " + id + " no fue encontrado.");
+        }
+
+        this.articuloRepository.deleteById(id);
+    }
 
 } // FINAL CLASE ARTICULOSERVICE;

@@ -22,9 +22,9 @@ public interface ArticuloService { // INICIO INTERFACE ARTICULOSERVICE;
     Articulo saveService(Articulo articulo);
 
     // MODIFYBYID(ID, ENTITY);
-    Articulo modifyByIdService(Long id, Articulo articulo);
+    Articulo modifyByIdService(Long id, Articulo articulo) throws ArticuloNotFoundException;
 
     // DELETEBYID(ID);
-    // void deleteById(Long id);
+    void deleteById(Long id) throws ArticuloNotFoundException;
 
 } // FINAL INTERFACE ARTICULOSERVICE;
