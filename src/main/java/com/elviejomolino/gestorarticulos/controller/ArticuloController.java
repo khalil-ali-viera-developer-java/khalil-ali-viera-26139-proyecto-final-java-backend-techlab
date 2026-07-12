@@ -76,7 +76,7 @@ public class ArticuloController { // INICIO CLASE ARTICULOCONTROLLER;
 
     // FINDBYID(ID);
     @GetMapping("/{id}")
-    public ResponseEntity<?> findByIdController(@PathVariable Long id) {
+    public ResponseEntity<?> findByIdController(@PathVariable Long id) { // INICIO METHOD FINDBYID(ID);
 
         try {
 
@@ -97,11 +97,11 @@ public class ArticuloController { // INICIO CLASE ARTICULOCONTROLLER;
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
 
         }
-    }
+    } // FINAL METHOD FINDBYID(ID);
 
     // SAVE(ENTITY);
     @PostMapping
-    public ResponseEntity<?> saveController(@RequestBody Articulo articulo) {
+    public ResponseEntity<?> saveController(@RequestBody Articulo articulo) { // INICIO METHOD SAVE(ENTITY);
 
         try {
 
@@ -118,11 +118,13 @@ public class ArticuloController { // INICIO CLASE ARTICULOCONTROLLER;
 
         }
 
-    }
+    } // FINAL METHOD SAVE(ENTITY);
 
     // MODIFYBYID(ID, ENTITY);
     @PutMapping("/{id}")
-    public ResponseEntity<?> modifyByIdController(@PathVariable Long id, @RequestBody Articulo articulo) {
+    public ResponseEntity<?> modifyByIdController(@PathVariable Long id, @RequestBody Articulo articulo) { // INICIO
+                                                                                                           // METHOD
+                                                                                                           // MODIFYBYID(ID,ENTITY);
 
         try {
 
@@ -143,11 +145,12 @@ public class ArticuloController { // INICIO CLASE ARTICULOCONTROLLER;
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
 
         }
-    }
+
+    } // FINAL METHOD MODIFYBYID(ID, ENTITY);
 
     // DELETEBYID(ID);
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteByController(@PathVariable Long id) {
+    public ResponseEntity<?> deleteByController(@PathVariable Long id) { // INICIO METHOD DELETEBY(ID);
 
         try {
 
@@ -167,6 +170,7 @@ public class ArticuloController { // INICIO CLASE ARTICULOCONTROLLER;
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
 
         }
-    }
+
+    } // FINAL METHOD DELETEBY(ID);
 
 } // FINAL CLASE ARTICULOCONTROLLER;

@@ -24,7 +24,6 @@ import jakarta.persistence.Table;
 public class Articulo { // INICIO CLASE ARTICULO;
 
     // ESTADO: ATRIBUTOS;
-
     // CLAVE PRIMARIA AUTOINCREMENTAL;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
