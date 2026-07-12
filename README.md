@@ -144,10 +144,6 @@ src/main/resources/application.properties
 La documentación técnica del proyecto se encuentra en la carpeta **docs**, donde se incluyen:
 
 * Diagramas UML.
-* Arquitectura de la aplicación.
-* Flujo de funcionamiento.
-* Documentación de los endpoints.
-* Explicación del funcionamiento interno del proyecto.
 
 ---
 
