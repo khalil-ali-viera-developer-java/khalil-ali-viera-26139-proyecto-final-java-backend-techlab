@@ -95,9 +95,6 @@ gestor-articulos
 ├── docs
 │   ├── uml
 │   
-│   
-│  
-│
 ├── pom.xml
 └── README.md
 ```
