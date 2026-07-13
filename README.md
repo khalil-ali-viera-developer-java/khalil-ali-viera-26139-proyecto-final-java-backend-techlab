@@ -1,7 +1,7 @@
 # Gestor de Artículos API
 
 API REST desarrollada con **Spring Boot** para la gestión de artículos mediante operaciones **CRUD (Crear, Leer, Actualizar y Eliminar)**. La aplicación utiliza **Spring Data JPA** para el acceso a datos y una base de datos **MariaDB** ejecutada mediante **XAMPP**.
-
+Link video: https://youtu.be/0P2EgHVf01o
 ---
 
 ## Tecnologías utilizadas
