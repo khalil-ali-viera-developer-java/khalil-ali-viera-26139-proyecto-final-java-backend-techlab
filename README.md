@@ -1,7 +1,15 @@
 # Gestor de Artículos API
 
 API REST desarrollada con **Spring Boot** para la gestión de artículos mediante operaciones **CRUD (Crear, Leer, Actualizar y Eliminar)**. La aplicación utiliza **Spring Data JPA** para el acceso a datos y una base de datos **MariaDB** ejecutada mediante **XAMPP**.
-Link video: https://youtu.be/0P2EgHVf01o
+
+---
+
+## 📹 Video de presentación
+
+En el siguiente video se muestra el funcionamiento de la API, incluyendo las operaciones CRUD realizadas con **Postman** y la persistencia de datos utilizando **Spring Data JPA** y **MariaDB**.
+
+🔗 https://youtu.be/0P2EgHVf01o
+
 ---
 
 ## Tecnologías utilizadas
@@ -53,22 +61,22 @@ MariaDB (XAMPP)
 
 ### Descripción de las capas
 
-* **Controller:** recibe las solicitudes HTTP y devuelve las respuestas.
+* **Controller:** recibe las solicitudes HTTP y devuelve las respuestas HTTP.
 * **Service:** contiene la lógica de negocio y las validaciones.
 * **Repository:** accede a la base de datos mediante Spring Data JPA.
-* **Entity:** representa las tablas de la base de datos.
+* **Entity:** representa la entidad persistida en la base de datos.
 
 ---
 
 ## Endpoints
 
-| Método HTTP | Endpoint              | Descripción                 |
-| ----------- | --------------------- | --------------------------- |
-| GET         | `/api/articulos`      | Obtener todos los artículos |
-| GET         | `/api/articulos/{id}` | Obtener un artículo por ID  |
-| POST        | `/api/articulos`      | Crear un artículo           |
-| PUT         | `/api/articulos/{id}` | Actualizar un artículo      |
-| DELETE      | `/api/articulos/{id}` | Eliminar un artículo        |
+| Método HTTP | Endpoint | Descripción |
+|-------------|----------|-------------|
+| GET | `/api/articulos` | Obtener todos los artículos |
+| GET | `/api/articulos/{id}` | Obtener un artículo por ID |
+| POST | `/api/articulos` | Crear un artículo |
+| PUT | `/api/articulos/{id}` | Actualizar un artículo |
+| DELETE | `/api/articulos/{id}` | Eliminar un artículo |
 
 ---
 
@@ -93,8 +101,8 @@ gestor-articulos
 │   └── test
 │
 ├── docs
-│   ├── uml
-│   
+│   └── uml
+│
 ├── pom.xml
 └── README.md
 ```
@@ -103,7 +111,7 @@ gestor-articulos
 
 ## Base de datos
 
-La aplicación utiliza **MariaDB**, ejecutada mediante **XAMPP**.
+La aplicación utiliza **MariaDB** ejecutada mediante **XAMPP**.
 
 La configuración de la conexión se encuentra en:
 
@@ -121,7 +129,7 @@ src/main/resources/application.properties
 4. Crear la base de datos correspondiente.
 5. Configurar la conexión en `application.properties`.
 6. Ejecutar la aplicación.
-7. Probar los endpoints utilizando Postman.
+7. Probar los endpoints utilizando **Postman**.
 
 ---
 
@@ -141,7 +149,7 @@ src/main/resources/application.properties
 
 ## Documentación
 
-La documentación técnica del proyecto se encuentra en la carpeta **docs**, donde se incluyen:
+La carpeta **docs** contiene la documentación técnica del proyecto, incluyendo:
 
 * Diagramas UML.
 
